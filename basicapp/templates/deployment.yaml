@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "basicapp.fullname" . }}
   labels:
+    foo: bar
     {{- include "basicapp.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
